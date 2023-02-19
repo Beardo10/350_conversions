@@ -34,7 +34,7 @@ def hex_to_binary(hexNum):
     return binary.lstrip("0")
 
 #takes binary number, converts and links each bit to hex
-def binary_to_hex(binNum):
+def binary_to_hex(binNum): #DOES NOT WORK!
     binNum = binNum[2:]
     #must split binNum into chunks of 4
     splitNum = []
@@ -46,8 +46,8 @@ def binary_to_hex(binNum):
         binNum = "0" + binNum
     splitNum.append(binNum)
     hexNum = "0x"
-    for nums in splitNum:
-        hexNum += hex_binary.inverse[nums]
+    for nums in reversed(splitNum):
+        hexNum = hexNum + hex_binary.inverse[nums]
     return hexNum
 
 #Takes 2^0, 2^1, 2^2... based on digit. Then add values up
