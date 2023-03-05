@@ -40,7 +40,9 @@ def binary_to_hex(binNum): #DOES NOT WORK!
     splitNum = []
 
     while len(binNum) > 4: #split binary number into chunks of 4
-        splitNum.append(binNum[:-5:-1])
+        print(binNum)
+        splitNum.append(binNum[-4:])
+        print(binNum[-4:])
         binNum = binNum[0:len(binNum) - 4]
     while len(binNum) < 4: #need to add leading zeros to MSB -------------- horribly inefficient, maybe fix later
         binNum = "0" + binNum
